@@ -1,0 +1,70 @@
+
+\documentclass[12pt]{article} % Default font size is 12pt, it can be changed here
+
+\usepackage{geometry} % Required to change the page size to A4
+\geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
+
+\usepackage{graphicx} % Required for including pictures
+
+\usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
+
+\linespread{1.2} % Line spacing
+
+\graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
+
+\begin{document}
+
+\section{Magnetic Anisotropy Effects} % Major section
+We have discussed the energy as a function of the magnitude of the magnetization $\vec{|M|}$, but have neglected the energy dependence of the direction of $\vec{M}$. The Heisenberg Hamiltonian:
+
+\begin{equation}
+H = - \sum\limits_{i<j} J_{ij}S_iS_j
+\end{equation}
+
+is completely isotropic and its energy levels do not depend on the direction in space which the crystal is magnetized in. If there is no other energy term the magnetization would always vanish in zero applied field, however real magnetic materials are not isotropic.
+
+\subsection{Overview of Magnetic Anisotropies} % Sub-section
+There are five basic types of magnetic anisotropies:
+
+\begin{itemize}
+\item Magnetocrystalline anisotropy - The magnetization is oriented along specific crystalline axes.
+\item Shape anisotropy - The magnetization is affected by the macroscopic shape of the solid
+\item Induced magnetic anisotropy - Specific magnetization directions can be stabalized by tempering the sample in an external magnetic field.
+\item Stress anisotropy(magnetostriction) - Magnetization leads to a spontaneous deformation.
+\item Surface and interface anisotropy - Surfaces and interfaces often exhibit different magnetic properties compared to the bulk due to their asymmetric environment.
+\end{itemize}
+
+\subsection{Magnetocrystalline Anisotropy}
+
+\subsection{Shape Anisotropy}
+Polycrystalline samples without a preferred orientation of the grains do not possess any magnetocrystalline anisotropy. But, an overall isotropic behavior concerning the energy being needed to magnetize it along an arbitary direction is only given for a spherical shape. If the sample is not spherical then one or more of the specific directions occur which represent easy magnetization axes which are solely caused by the shape. This is known as shape anisotropy.
+
+The relationship $B = \mu_0\left (H + M\right )$ is only valid for infinite systems. A finite sample exhibits poles at its surfaces which leads to a stray field outside the sample. This stray field results in a demagnetizing field inside the sample.
+
+The energy of a sample in its own stray field is given by the stray field energy $E_str$:
+\begin{equation}
+E_{str} = - \frac{1}{2} \int \mu_0 M \cdot H_{demag} dV
+\end{equation}
+
+This can be easily solved for symmetric objects. For a perfect sphere the stray field density $E_{str}^{sph}$ is given by:
+\begin{equation}
+E_{str}^{sph} = \frac{1}{6} \mu_0 M^2
+\end{equation}
+
+From this, it can be seen that the stray field has no directional dependence for a spherical object. For an infinetely expanded thin plate(a = b = $\inf$) the stray field energy density $E_{str}^{film}$ is:
+
+\begin{equation}
+E_{str}^{film} = \frac{1}{2} \mu_0 M^2 cos^2 \left ( \theta \right )
+\end{equation}
+
+From this, it can be seen that the stray field is minumum for $\theta = 90 \deg$. This means that the shape anisotropy favors a magnetization direction parallel to the surface, i.e. within the film plane.
+
+For bcc-Fe, fcc-Ni, and hcp-Co the shape anisotropy constant is larger than the crystalline anisotropy constant $K_{shape}^V > K_1$, thus shape anisotropy dominates the magnetocystralline anisotropy which results in an in-plane magnetization for thin film systems.
+
+\subsection{Induced Magnetic Anisotropy}
+
+
+
+
+
+\end{document}
