@@ -63,8 +63,39 @@ For bcc-Fe, fcc-Ni, and hcp-Co the shape anisotropy constant is larger than the 
 
 \subsection{Induced Magnetic Anisotropy}
 
+\subsection{Stress Anisotropy (Magnetostriction}
+In addition to magnetocrystalline anisotropy, there is another effect related to spin-orbit coupling called magnetostriction. Magnetostriction arises from the strain dependence of the anisotropy constants. Upon magnetization, a previously demagnetized crystal experiences a strain that can be measured as a function of applied field along the principal crystallographic axes. A magnetic material will therefore change its dimension when magnetized.
 
+The inverse affect, or the change of magnetization with stress also occurs. A uniaxial stress can produce a unique easy axis of magnetization if the stress is sufficient to overcome all other anisotropies. The magnitude of the stress anisotropy is described by two more empirical constants known as the magnetostriction constants ($\lambda_{111}$ and $\lambda_{100}$) and the level of stress.
 
+The coefficient $\lambda$ may be positive or negative, and is usually on the order of $10^-5$
 
+\subsection{Magnetic Surface and Interface Anisotropy}
+The considerations above were carried out for volume systems neglecting interfaces and surfaces. Due to the broken symmetry at interfaces the anisotropy energy contains terms with lower order in $\alpha$ which are forbidden for the threee-dimensional systems. Therefore, each effective anisotropy constant $K^{eff}$ is divided into two parts: one discribing the volume and one the surface contribution:
+\begin{equation}
+K^{eff} = K^V + \frac{2K^S}{d}
+\end{equation}
+
+with $K^V$ being the volume dependent magnetocrystalline anisotropy constant and $K^S$ being the surface dependent magnetocrystalline anisotropy constant. The second term has an inverse dependence on the thickness d of the system which is important for thin films. The factor of 2 arises from the layer being bounded by two interfaces.
+
+By rewriting the previous equation, we can plot the dependence as a $d \cdot K^{eff}(d)$ diagram allowing us to determine $K^V$ as the slope of the resulting line and $2K^S$ as the zero-crossing. This can be seen in Figure 1:
+
+\begin{figure}
+\includegraphics[scale=1.0]{surfaceandinterface}
+\caption{Figure 1: Magnetic anisotropy as a function of film thickness}
+\end{figure}
+
+Due to the shape anisotropy $K^V$ is negative. This can directly be seen by the negative slope which results in an in-plane magnetization. The zero-crossing occurs at a positive value $K^S$, which leads to a critical thickness $d_c$:
+\begin{equation}
+d_c = -\frac{2K^2}{K^V}
+\end{equation}
+
+with
+\begin{equation}
+d < d_c : perpendicular magnetization
+d > d_c : in-plane magnetization
+\end{equation}
+
+due to the change of sign of $K^{eff}$. Thus, the volume contribution always dominates for thick films with a magnetization being within the film plane. 
 
 \end{document}
