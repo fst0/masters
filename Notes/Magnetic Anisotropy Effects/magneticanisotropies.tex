@@ -1,5 +1,5 @@
-
-\documentclass[12pt]{article} % Default font size is 12pt, it can be changed here
+\documentclass[10pt]{article} % Default font size is 12pt, it can be changed here
+\usepackage{amsmath}
 
 \usepackage{geometry} % Required to change the page size to A4
 \geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
@@ -9,7 +9,6 @@
 \usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
 
 \linespread{1.2} % Line spacing
-
 \graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
 
 \begin{document}
@@ -35,6 +34,61 @@ There are five basic types of magnetic anisotropies:
 \end{itemize}
 
 \subsection{Magnetocrystalline Anisotropy}
+The most important type of anisotropy is the magnetocrystalline anisotropy which is caused by the spin orbit interaction of the electrons. The electron orbitals are linked to the crystallographic structure. Due to their interaction with the spins they make the latter prefer to align along well-defined crystallographic axes. Therefore, there are directions in space which a magnetic material is easier to magnetize in than other ones(easy axes). I will give the magnetocrystalline energy per volume $E_{cry}$ for cubic, tetragonal, and hexagonal systems. 
+\begin{equation}
+E_{cry}^{cub} = K_0 + K_1(\alpha_1^2 \alpha_2^2 + \alpha_1^2 \alpha_3^2 + \alpha_2^2 \alpha_3^2) + K_2\alpha_1^2 \alpha_2^2 \alpha_3^2 + K_3(\alpha_1^2 \alpha_2^2 + \alpha_1^2 \alpha_3^2 + \alpha_2^2 \alpha_3^2) + ...
+\end{equation}
+\begin{equation}
+E_{cry}^{tet} = K_0 + K_1cos^2\theta + K_2cos^4\theta + K_3sin^4\theta(sin^4\phi + cos^4\phi)
+\end{equation}
+
+\begin{equation}
+E_{cry}^{hex} = K_0 + K_1sin^2\theta + K_2sin^4\theta + K_3sin^6\theta + K_4sin^6\theta cos6\theta
+\end{equation}
+
+where the coefficients $K_i$ are the magnetocrystalline anisotropy constants which are fnctions of the basis. The directional cosine $\alpha_i$ is given by $\alpha_1 = sin\theta cos\phi$, $\alpha_2 = sin\theta sin\phi$, and $\alpha_3 = cos\theta$. 
+
+$\linebreak$
+
+In general:
+\begin{itemize}
+\item The crystal anisotropy constants depend on the material and temperature
+\item $K_1$ and $K_2$ are sufficient for a good agrement between experiment and calculation
+\item Sign and ratio of the constants determine the easy axes
+\end{itemize}
+
+Consider a cubic system. We can now obtain the energies for a given axes. 
+\begin{itemize}
+\item $E_{100} \implies \theta = 90$ and $\phi = 0 \implies \alpha_1 = 1, \alpha_2 = \alpha_3 = 0$
+\item $E_{110} \implies \theta = 90$ and $\phi = 45 \implies \alpha_1 = \alpha_2 = \frac{1}{\sqrt{2}}$, $\alpha_3 = 0$
+\item $E_{111} \implies \theta = 54.7(tan\theta = \sqrt{2})$ and $\phi = 45 \implies \alpha_1 = \alpha_2 = \alpha_3 = \frac{1}{\sqrt{3}}$
+\end{itemize}
+
+From this, the corresponding energies are:
+
+\begin{equation}
+E_{100} = K_0
+\end{equation}
+\begin{equation}
+E_{110} = K_0 + \frac{1}{4}K_1
+\end{equation}
+\begin{equation}
+E_{111} = K_0 + \frac{1}{3}K_1 + \frac{1}{27}K_2
+\end{equation}
+
+This shows that the $K_1$ anisotropy constant is the most important. For a positive value $K_1 > 0$, as in bcc-Fe, the [100] direction is the easy magnetization axis and the [111] direction is the hard axis due to the relationship $E_{100} < E_{110} < E_{111}$. For a negative value $K_1 < 0$, as in fcc-Ni, the [111] direction is the easy magnetization axis and the [100] direction is the hard axis due to the relationship $E_{111} < E_{110} < E_{100}$. 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=1.0]{easyaxis}
+\caption{Easy axis and Hard axis}
+\end{center}
+\end{figure}
+
+The additional consideration of the anisotropy constant $K_2$ may signnificantly vary the magnetic properties. If $K_1$ and $K_2$ are of the same order of magnitude the [110] direction can be the easy as well as the hard axis. The ratio of $\frac{K_1}{K_2}$ is about 250 for Fe. For Ni the ratio is about 2, i.e. both constants nearly exhibit the same value. Therefore the temperature dependence of the anisotropy constants must be taken into account.  There will exist some temperature at which $K_1$ will change signs, thus the magnetic properties will be different in both temperature regimes.
+
+The concentration of the material also effects the anisotropy constants.
+
 
 \subsection{Shape Anisotropy}
 Polycrystalline samples without a preferred orientation of the grains do not possess any magnetocrystalline anisotropy. But, an overall isotropic behavior concerning the energy being needed to magnetize it along an arbitary direction is only given for a spherical shape. If the sample is not spherical then one or more of the specific directions occur which represent easy magnetization axes which are solely caused by the shape. This is known as shape anisotropy.
@@ -42,11 +96,13 @@ Polycrystalline samples without a preferred orientation of the grains do not pos
 The relationship $B = \mu_0\left (H + M\right )$ is only valid for infinite systems. A finite sample exhibits poles at its surfaces which leads to a stray field outside the sample. This stray field results in a demagnetizing field inside the sample.
 
 The energy of a sample in its own stray field is given by the stray field energy $E_str$:
+
 \begin{equation}
 E_{str} = - \frac{1}{2} \int \mu_0 M \cdot H_{demag} dV
 \end{equation}
 
 This can be easily solved for symmetric objects. For a perfect sphere the stray field density $E_{str}^{sph}$ is given by:
+
 \begin{equation}
 E_{str}^{sph} = \frac{1}{6} \mu_0 M^2
 \end{equation}
@@ -72,6 +128,7 @@ The coefficient $\lambda$ may be positive or negative, and is usually on the ord
 
 \subsection{Magnetic Surface and Interface Anisotropy}
 The considerations above were carried out for volume systems neglecting interfaces and surfaces. Due to the broken symmetry at interfaces the anisotropy energy contains terms with lower order in $\alpha$ which are forbidden for the threee-dimensional systems. Therefore, each effective anisotropy constant $K^{eff}$ is divided into two parts: one discribing the volume and one the surface contribution:
+
 \begin{equation}
 K^{eff} = K^V + \frac{2K^S}{d}
 \end{equation}
@@ -80,21 +137,26 @@ with $K^V$ being the volume dependent magnetocrystalline anisotropy constant and
 
 By rewriting the previous equation, we can plot the dependence as a $d \cdot K^{eff}(d)$ diagram allowing us to determine $K^V$ as the slope of the resulting line and $2K^S$ as the zero-crossing. This can be seen in Figure 1:
 
-\begin{figure}
-\includegraphics[scale=1.0]{surfaceandinterface}
-\caption{Figure 1: Magnetic anisotropy as a function of film thickness}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.8]{surfaceandinterface}
+\caption{Magnetic anisotropy as a function of film thickness}
+\end{center}
 \end{figure}
 
 Due to the shape anisotropy $K^V$ is negative. This can directly be seen by the negative slope which results in an in-plane magnetization. The zero-crossing occurs at a positive value $K^S$, which leads to a critical thickness $d_c$:
+
 \begin{equation}
 d_c = -\frac{2K^2}{K^V}
 \end{equation}
 
 with
-\begin{equation}
-d < d_c : perpendicular magnetization
-d > d_c : in-plane magnetization
-\end{equation}
+\begin{center}
+\begin{itemize}
+\item $d < d_c$ : perpendicular magnetization
+\item $d > d_c$ : in-plane magnetization
+\end{itemize}
+\end{center}
 
 due to the change of sign of $K^{eff}$. Thus, the volume contribution always dominates for thick films with a magnetization being within the film plane. 
 
